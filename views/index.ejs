@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <%- include ('./components/head') %>
+</head>
+<body>
+    <nav>
+      <%- include ('./components/nav') %>
+    </nav>
+
+    <header>
+      <%- include ('./components/header') %>
+    </header>
+    <div class="mensagemTopo">
+      <% if(mensagem != "") {  %>
+  
+        <section id="message">
+            <p><%= mensagem %></p> <span id="close">&times;</span>
+        </section>
+    <% }  %> 
+    </div>
+    <main>
+      <h1>Peakas Brabas</h1>
+      <section class="items">
+        
+        <% loja.forEach((items) =>{ %>
+        <div class="item">
+          <a class="item2" href="/detalhes/<%= items.id %>">
+            <img src="<%= items.imagem %>" alt="item" />
+            <h2><%= items.nome %></h2>
+            </a>
+
+        </div>
+        <% }) %>
+      </section>
+    </main>
+
+    
+      <footer>
+        <%- include ('./components/footer') %>
+      </footer>
+
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/JS/scriptSlide.js"></script>
+    <script src="/JS/script.js"></script>
+</body>
+</html>

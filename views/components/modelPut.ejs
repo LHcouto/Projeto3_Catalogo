@@ -1,0 +1,51 @@
+<section class="modal-overlay">
+  <div class="modal-header">
+    <div class="img-atualizar">
+      <h3>Atualizar a camiseta</h3>
+      <div class="modal" id="modal"></div>
+    </div>
+    <form class="form-modal" action="/update/<%= itemPut.id %> " method="POST">
+    
+        <label id="labelNomeAtualizar" for="nome">Nome:</label>
+        <input
+          type="text"
+          id="nomeAtualizar"
+          name="nome"
+          value=" <%= itemPut.nome.trim() %> "
+          required
+        />
+
+        <label id="labelDescricaoAtualizar" for="descricao">Descrição:</label>
+        <input
+          type="text" id="descricaoAtualizar" name="descricao" value="<%= itemPut.descricao.trim() %> "required/>
+          <div class="cadastroTamanhoAtualizar">
+            <label id="labelTamanhoAtualizar" for="tamanho">Tamanho:</label>
+          <select id="tamanhoAtualizar" name="tamanho" required >
+            <option value="<%= itemPut.tamanho %>"><%= itemPut.tamanho %></option>
+            <option value="P">tamanho P</option>
+            <option value="M">tamanho M</option>
+            <option value="G">tamanho G</option>
+            <option value="XG">tamanho XG</option>
+            <option value="XXG">tamanho XXG</option>
+          </select>
+         </div>
+ 
+
+
+        <label id="labelImagemAtualizar" for="imagem">Link da imagem:</label>
+        <input
+          type="text"
+          id="imagemAtualizar"
+          name="imagem"
+          value="<%= itemPut.imagem.trim() %> "
+          required
+        />
+    
+      <div class="btnAtualizarImagem">
+        <button id="btnAtualizar" class="btnCadastrar" type="submit">Atualizar</button>
+        <button class="btnVoltar">
+          <a href="/detalhes/<%= itemPut.id %>">Voltar</a>
+        </button>
+      </div>
+    </form>
+</section>
